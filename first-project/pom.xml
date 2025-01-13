@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId> <!-- Proje için benzersiz grup adı -->
+    <artifactId>first-project</artifactId> <!-- Projenin adı -->
+    <version>1.0-SNAPSHOT</version> <!-- Proje versiyonu -->
+
+    <properties>
+        <maven.compiler.source>23</maven.compiler.source> <!-- Kullanılan Java sürümü (Java 23) -->
+        <maven.compiler.target>23</maven.compiler.target> <!-- Hedef Java sürümü -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Proje kaynak kodu için karakter kodlaması -->
+        <itext.version>8.0.4</itext.version> <!-- iText kütüphanesi için sürüm numarası -->
+    </properties>
+
+    <dependencies>
+        <!-- iText kütüphanesinin gerekli modüllerini ekliyoruz -->
+        <dependency>
+            <groupId>com.itextpdf</groupId> <!-- iText kütüphanesi için grup adı -->
+            <artifactId>kernel</artifactId> <!-- iText kernel modülü -->
+            <version>${itext.version}</version> <!-- Yukarıda tanımlanan iText sürüm numarası -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>layout</artifactId> <!-- iText layout modülü -->
+            <version>${itext.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>io</artifactId> <!-- iText io modülü -->
+            <version>${itext.version}</version>
+        </dependency>
+
+        <!-- SLF4J günlükleme kütüphanesi -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version> <!-- SLF4J sürüm numarası -->
+        </dependency>
+
+        <!-- Log4j günlükleme için (isteğe bağlı) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.36</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+
+</project>
